@@ -1,7 +1,11 @@
 const Airport = require("../src/airport");
 
+let airport;
+
+beforeEach(() => (airport = new Airport()));
+
 describe("Airport", () => {
   test("An Airport can be instantiated", () => {
-    expect(new Airport()).toBeInstanceOf(Airport);
+    expect(airport).toBeInstanceOf(Airport);
   });
 });
