@@ -8,6 +8,10 @@ module.exports = class Airport {
   }
 
   land(plane) {
+    if (this._isFull()) {
+      throw new Error("Airport is full.");
+    }
+
     this._planes.push(plane);
     return plane;
   }
@@ -16,5 +20,9 @@ module.exports = class Airport {
     const takenOffPlane = this._planes.filter(plane => plane.id === planeId)[0];
     this._planes = this._planes.filter(plane => plane != takenOffPlane);
     return takenOffPlane;
+  }
+
+  _isFull() {
+    return true;
   }
 };

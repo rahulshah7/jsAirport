@@ -24,6 +24,12 @@ describe("Airport", () => {
     test("Returns the landed plane", () => {
       expect(airport.land(plane0)).toBe(plane0);
     });
+
+    describe("When the airport is full", () => {
+      test("Throws an error", () => {
+        expect(() => airport.land(plane0)).toThrowError(/full/);
+      });
+    });
   });
 
   describe("takeoff(planeId)", () => {
