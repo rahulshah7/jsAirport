@@ -14,12 +14,14 @@ module.exports = class Airport {
     }
 
     this._planes.push(plane);
+    plane.isLanded = true;
     return plane;
   }
 
   takeoff(planeId) {
     const takenOffPlane = this._planes.filter(plane => plane.id === planeId)[0];
     this._planes = this._planes.filter(plane => plane != takenOffPlane);
+    takenOffPlane.isLanded = false;
     return takenOffPlane;
   }
 
