@@ -1,0 +1,21 @@
+{
+  "name": "jsairport",
+  "version": "1.0.0",
+  "description": "Makers Airport Challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV='production' node index.js",
+    "test": "NODE_ENV='test' jest --coverage --verbose --watch",
+    "watch": "NODE_ENV='development' nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.4",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4"
+  }
+}
