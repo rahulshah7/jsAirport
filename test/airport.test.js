@@ -33,6 +33,12 @@ describe("Airport", () => {
         expect(() => airport.land(new Plane("plane-10"))).toThrowError(/full/);
       });
     });
+    describe("When the plane is already landed", () => {
+      test("Throws an error", () => {
+        airport.land(plane0);
+        expect(() => airport.land(plane0)).toThrowError(/already landed/);
+      });
+    });
   });
 
   describe("takeoff(planeId)", () => {
@@ -47,6 +53,14 @@ describe("Airport", () => {
     test("Returns the taken-off plane", () => {
       airport.land(plane0);
       expect(airport.takeoff("plane-0")).toBe(plane0);
+    });
+
+    describe("When the plane has already taken off", () => {
+      test("Throws an error", () => {
+        airport.land(plane0);
+        airport.takeoff("plane-0");
+        expect(() => airport.takeoff("plane-0")).toThrowError(/not in airport/);
+      });
     });
   });
 });
