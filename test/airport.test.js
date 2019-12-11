@@ -27,7 +27,10 @@ describe("Airport", () => {
 
     describe("When the airport is full", () => {
       test("Throws an error", () => {
-        expect(() => airport.land(plane0)).toThrowError(/full/);
+        for (let i = 0; i < airport._capacity; i++) {
+          airport.land(new Plane(`plane-${i}`));
+        }
+        expect(() => airport.land(new Plane("plane-10"))).toThrowError(/full/);
       });
     });
   });

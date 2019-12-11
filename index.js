@@ -20,7 +20,7 @@ airport.takeoff("spitfire0");
 // To ensure safety
 // I want to prevent landing when the airport is full
 
-airport.land(spitfire); // Expect Error: airport full
+// # Expect Error: airport full when capacity is reached
 
 // As the system designer
 // So that the software can be used for many different airports

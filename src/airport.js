@@ -1,6 +1,7 @@
 module.exports = class Airport {
-  constructor() {
+  constructor(capacity = 10) {
     this._planes = [];
+    this._capacity = capacity;
   }
 
   get planes() {
@@ -23,6 +24,6 @@ module.exports = class Airport {
   }
 
   _isFull() {
-    return true;
+    return this.planes.length === this._capacity;
   }
 };
