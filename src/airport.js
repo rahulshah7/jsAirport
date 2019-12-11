@@ -9,5 +9,12 @@ module.exports = class Airport {
 
   land(plane) {
     this._planes.push(plane);
+    return plane;
+  }
+
+  takeoff(planeId) {
+    const takenOffPlane = this._planes.filter(plane => plane.id === planeId)[0];
+    this._planes = this._planes.filter(plane => plane != takenOffPlane);
+    return takenOffPlane;
   }
 };

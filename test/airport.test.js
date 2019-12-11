@@ -20,6 +20,10 @@ describe("Airport", () => {
       airport.land(plane0);
       expect(airport.planes.length).toEqual(1);
     });
+
+    test("Returns the landed plane", () => {
+      expect(airport.land(plane0)).toBe(plane0);
+    });
   });
 
   describe("takeoff(planeId)", () => {
@@ -29,6 +33,11 @@ describe("Airport", () => {
       expect(airport.planes.length).toEqual(1);
       airport.takeoff("plane-0");
       expect(airport.planes.length).toEqual(0);
+    });
+
+    test("Returns the taken-off plane", () => {
+      airport.land(plane0);
+      expect(airport.takeoff("plane-0")).toBe(plane0);
     });
   });
 });
