@@ -26,6 +26,9 @@ airport.takeoff("spitfire0");
 // So that the software can be used for many different airports
 // I would like a default airport capacity that can be overridden as appropriate
 
+// const airport = new Airport(); // Defaults to a capacity of 10 planes
+// const airport = new Airport(5); // Set a capacity of 5 planes
+
 // As an air traffic controller
 // To ensure safety
 // I want to prevent takeoff when weather is stormy
